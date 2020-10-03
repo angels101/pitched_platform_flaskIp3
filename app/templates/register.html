@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+    <div class="col-md-8">
+            <h3 >Create Account</h3>
+    <form method="POST" action="">
+        <h2 style="text-align: center; font-size: 40px;font-weight: 600;text-decoration: underline;">New Account</h2>
+        {{ form.hidden_tag() }}
+        {{wtf.quick_form(form)}}
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="{{url_for('main.login')}}">Sign In</a>
+            </small>
+        </div>
+    </form>
+</div>
+<div class="col-md-2"></div>
+</div>
+</div>
+{% endblock content %}
