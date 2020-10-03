@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+{% import 'macros.html' as macro %}
+{% block content %}
+
+<div class="container">
+  <h1 style="color:black;text-align: center;font-weight: 900;">Pitch Ideas</h1>
+  <br>
+  <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#product">Web App</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#interview">Job Interview</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#pickupline">Pickup line</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#promotion">Promotion</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="product" class="container tab-pane active"><br>
+      {{ macro.display(productpitch) }}
+
+    </div>
+    <div id="interview" class="container tab-pane fade"><br>
+      {{ macro.display(interviewpitch) }}
+    </div>
+    <div id="pickupline" class="container tab-pane fade"><br>
+      {{ macro.display(pickuplines)}}
+    </div>
+    <div id="promotion" class="container tab-pane fade"><br>
+      {{ macro.display(promotionpitch) }}
+    </div>
+
+  </div>
+
+
+
+
+
+  <article class="media content-section">
+    <div class="row">
+      {% if category_list %}
+      {% for category in category_list %}
+      <div class="col-md-6">
+        <div class="thumbnail text-center">
+          <h5 class="card-header">{{category.title}}</h5>
+          <h5 class="card-header">{{category.category}}</h5>
+          <div class="card-body">
+
+            <h2>{{category.description}}</h2>
+            <footer class="footer"> Posted by {{category.user.username}}</footer>
+
+
+
+            <a href="{{url_for('main.new_comment',pitch_id = category.id)}}" class="btn btn-success"> Add new
+              comment</a>
+            <a class="btn btn-outline-success" href="{{url_for('main.upvote',pitch_id = category.id)}}"><i></i>Upvote
+              <span>{{category.upvotes.count()}}</span></a>
+            <a class="btn btn-outline-danger" href="{{url_for('main.downvote',pitch_id = category.id)}}">
+              <i></i>Downvote <span>{{category.downvotes.count()}}</span></a>
+
+                <button class="btn danger">Danger</button>
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+      {% else %}
+      {% endif %}
+    </div>
+  </article>
+
+  {% endblock content %}

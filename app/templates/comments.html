@@ -1,0 +1,37 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+{% extends 'layout.html' %}
+{% import 'macros.html' as macro %}
+
+{% block content %}
+
+
+
+<div style="background-color:rgb(239, 252, 249);">
+    <div class="row">
+        <div class="card" style="margin-top: 10em;">
+            <div class="card-body text-center">
+                <h4><a>{{pitch.title}}</a></h4>
+                <h5 class="card-text text-center">{{pitch.description}}.</h5>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="jumbotron">
+                {{wtf.quick_form(form)}}
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <h4>Comments</h4>
+            {{ macro.displayComment(comment) }}
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

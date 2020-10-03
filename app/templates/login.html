@@ -1,0 +1,34 @@
+{% extends 'layout.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8"><br><br>
+      
+      <!--Flash message -->
+      {% for message in get_flashed_messages() %}
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+      </div>
+      {% endfor %}
+      <!-- Login form -->
+      <h3 style="text-align: center; font-size: 40px;font-weight: 600;text-decoration: underline;">LogIn</h3>
+      
+      <form method="POST" action=""style="margin-top: 2em;">
+        {{wtf.quick_form(login_form)}}
+    
+
+    <div class="border-top pt-3">
+      <small class="text-muted">
+        Do You Have An Account? <a class="ml-2" href="{{url_for('main.register')}}">Sign Up Here</a>
+      </small>
+    </div>
+    </form>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+  {% endblock%}
