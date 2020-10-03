@@ -1,0 +1,31 @@
+
+{% import 'bootstrap/wtf.html' as wtf %}
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+	  <div class="col-md-4"></div>
+	  <div class="col-md-4" style="margin-top: 10em;">
+		  <div class="card" style="width: 30em;">
+			  <div class="card-body">
+				  {{wtf.quick_form(form)}}
+				  <ul style="list-style: none;">
+					  {% for pitch in pitches %}
+					  <div class="list-group">
+						  <a href="#">
+							  <div class="list-item">
+								  <p>{{pitch.id}}</p>
+							  </div>
+							  <h4>{{ pitch.description }}</h4>
+							  <h6> Posted by {{user.username}}.</h6>
+						  </a>
+					  </div>
+					  {% endfor %}
+				  </ul>
+			  </div>
+		  </div>
+	  </div>
+	  <div class="col-md-4"></div>
+  </div>
+</div>
+{% endblock %}
