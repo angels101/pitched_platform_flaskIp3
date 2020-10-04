@@ -1,33 +1,21 @@
 import os
 
 class Config:
-    '''
-    This is the parent configuration class
-
-    '''
-    SECRET_KEY = "dfghjxfghjertyui45679dfhj"
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://arthur:Lastman@localhost/pitch'
-    #  email configurations
-    MAIL_SERVER='smtp.googlemail.com'
-    MAIL_PORT=587
-    MAIL_USE_TLS=True
-    MAIL_USERNAME=os.environ.get("MAIL_USERNAME")
-    MAIL_PASSWORD=os.environ.get("MAIL_PASSWORD")
+    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_TRACK_MODIFICATIONS=True
+    UPLOADED_PHOTOS_DEST ='app/static/photos'
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 465
+    MAIL_USE_TLS = False
+    MAIL_USE_SSL = True
+    SECRET_KEY=os.environ.get('SECRET_KEY')
+    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
+    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 class ProdConfig(Config):
-    '''
-     production configuration class which is a child of config class
-    '''
-    
-    SQLALCHEMY_DATABASE_URI =os.environ.get("DATABASE_URL")
-
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 class DevConfig(Config):
-    '''
-    Development configuration class, child of the class Config
-    '''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://arthur_earl:arthur@localhost/pitch'
     DEBUG = True
-    
-
-
 config_options = {
 'development':DevConfig,
 'production':ProdConfig

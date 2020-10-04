@@ -4,6 +4,10 @@ from config import config_options
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_mail import Mail
+from flask_wtf.csrf import CSRFProtect
+
+
+import os 
 
 
 
@@ -23,6 +27,7 @@ def create_app(config_name):
 
     #creating the app configurations
     app.config.from_object(config_options[config_name])
+    app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY") 
 
     #Initializing flask extensions
     bootstrap.init_app(app)
