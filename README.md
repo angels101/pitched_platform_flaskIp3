@@ -5,7 +5,7 @@ Author
 [Angels101](https://github.com/angels101)
 
 Link to Live Site
-https://pitch-it-ke.herokuapp.com/
+https://git.heroku.com/pitched-platform-flaskip3.git
 
 Description
 Pitches-pitched is a web application that allows users to submit the one-minute pitches and thereafter others can be able to vote on the pitches and add comments. Pitches are based on categories.What are you waiting for? Make better first and lasting  impressions in 60 seconds because that's what the world needs! 
@@ -25,7 +25,7 @@ Clone this repository in your termiminal
    * A user can view and submit pitches by category.
    * A user can sign out of the account as they please.
 ## Technologies Used
-    Python 3.6.8
+    Python 3.8
     HTML5, CSS and Bootstrap
     Flask Framework
     Postgressql
