@@ -9,7 +9,7 @@ app = create_app('development')
 
 manager = Manager(app)
 manager.add_command('server',Server)
-csrf = CsrfProtect(app)
+
 
 migrate = Migrate(app,db)
 manager.add_command('db',MigrateCommand)
