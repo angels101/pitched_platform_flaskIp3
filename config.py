@@ -25,6 +25,7 @@ class TestsConfig(Config):
     """
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://arthur_earl:arthur@localhost/pitch'
     DEBUG = True
+    
 
 
 
