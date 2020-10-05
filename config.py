@@ -3,7 +3,7 @@ import os
 class Config:
     # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS=True
-    UPLOADED_PHOTOS_DEST ='app/static/photos'
+    # UPLOADED_PHOTOS_DEST ='app/static/photos'
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465
     MAIL_USE_TLS = True

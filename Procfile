@@ -1,1 +1,1 @@
-web: gunicorn manage:app
+web: node loader.js --no-daemon
