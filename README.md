@@ -2,9 +2,9 @@
 
 
 Author
-[Angels101](https://github.com/angels101)
+[Angels101]
 
-Link to Live Site
+Link to thegLive Site
 https://git.heroku.com/pitched-platform-flaskip3.git
 
 Description
@@ -12,8 +12,6 @@ Pitches-pitched is a web application that allows users to submit the one-minute 
 
 ## Installation Requirements
 Clone this repository in your termiminal
-
-`$ git clone https://github.com/angels101/pitched_platform_flaskIp3.git'
 
  
 
